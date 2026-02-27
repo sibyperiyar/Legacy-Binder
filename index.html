@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Binder</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css?v=204">
+    <link rel="stylesheet" href="css/binder.css?v=4">
+    <meta name="theme-color" content="#f8f5f2">
+    <link rel="icon" href="./icon.png">
+    <link rel="apple-touch-icon" href="./icon.png">
+</head>
+
+<body>
+    <div id="app">
+        <!-- View 6: Legacy Binder -->
+        <section id="view-binder" class="active">
+            <header class="book-header">
+                <h2>Legacy Binder</h2>
+                <div class="actions">
+                    <select id="binder-member-select" class="nav-btn secondary" style="min-width: 150px;">
+                        <!-- Populated by JS -->
+                    </select>
+                    <button id="btn-add-member" class="nav-btn small" title="Add Family Member">➕ 👤</button>
+                    <button id="btn-edit-member" class="nav-btn small" title="Rename Member">✎</button>
+                    <button id="btn-delete-member" class="nav-btn small" title="Delete Member"
+                        style="color:#d32f2f;">❌</button>
+
+                    <div style="width: 20px;"></div> <!-- Spacer -->
+
+                    <button id="btn-binder-search" class="nav-btn secondary">🔍 Search</button>
+                    <button id="btn-binder-export" class="nav-btn secondary">📤 Backup</button>
+                    <button id="btn-binder-import" class="nav-btn secondary" title="Restore from JSON or Kit">📥
+                        Restore</button>
+                    <button id="btn-binder-print" class="nav-btn secondary" title="Print to PDF">🖨️ Print</button>
+                    <button id="btn-binder-save-template" class="nav-btn secondary"
+                        title="Save Structure as Template">💾 Tpl</button>
+
+                    <div style="width: 10px;"></div> <!-- Spacer -->
+
+                    <a href="USER_MANUAL.html" target="_blank" class="nav-btn secondary" title="User Manual"
+                        style="text-decoration: none;">❓ Help</a>
+                    <a href="https://zetozone.com/locomotion-diary/" target="_blank" class="nav-btn secondary"
+                        title="Locomotion Diary Website" style="text-decoration: none;">📔 Locomotion Diary</a>
+                </div>
+            </header>
+
+            <div class="binder-container">
+                <!-- Sidebar: Tree -->
+                <div class="binder-sidebar">
+                    <div class="binder-header-actions">
+                        <button id="btn-add-section" class="btn small primary" style="flex:1;">+ Section</button>
+                        <button id="btn-collapse-all" class="btn small secondary" title="Collapse All">➖</button>
+                    </div>
+                    <div id="binder-tree-root" class="tree-root">
+                        <!-- Tree Nodes Go Here -->
+                        <div class="empty-state small">Select a member to view sections.</div>
+                    </div>
+
+                    <!-- Dashboard Widget -->
+                    <div id="binder-dashboard" style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <h4 style="margin: 0; color: #d32f2f; font-size: 0.9em;">Upcoming Alerts</h4>
+                            <button id="btn-refresh-alerts" class="btn-icon-small"
+                                title="Check Validity Now">🔄</button>
+                        </div>
+                        <div id="binder-alerts-list">
+                            <div style="font-size: 0.8rem; color: #999;">No upcoming expiries.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content: Fields -->
+                <div class="binder-content">
+                    <div id="binder-content-header" class="content-header">
+                        <h3 id="current-section-title" class="content-title">Select a Section</h3>
+                        <div class="content-toolbar">
+                            <button id="btn-add-sub-section" class="btn secondary" disabled
+                                title="Add a sub-folder inside this section">+ Sub-Section</button>
+                            <button id="btn-add-field" class="btn primary" disabled
+                                title="Add a new data field (Text, Date, Password)">+ Add Field</button>
+                            <button id="btn-duplicate-section" class="btn secondary" disabled
+                                title="Duplicate this section (Copy)">📋 Copy</button>
+                            <button id="btn-edit-section" class="btn secondary" disabled title="Rename this section">✎
+                                Edit</button>
+                            <button id="btn-delete-section" class="btn danger" disabled
+                                title="Delete this section and everything in it">🗑️</button>
+                        </div>
+                    </div>
+
+                    <div id="binder-fields-container" class="fields-grid">
+                        <div class="empty-state">
+                            <p>Select a section from the left sidebar to view details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals for Binder -->
+            <!-- Add/Edit Node Modal -->
+            <div id="binder-node-modal" class="modal-overlay" style="display: none;">
+                <div class="modal binder-modal" style="max-width: 400px;">
+                    <h3 id="binder-modal-title">Add New</h3>
+                    <div class="input-group">
+                        <label>Title / Label</label>
+                        <input type="text" id="binder-node-title" placeholder="e.g. Health Insurance">
+                    </div>
+
+                    <div id="field-options" style="display: none;">
+                        <div class="input-group">
+                            <label>Field Type</label>
+                            <select id="binder-field-type">
+                                <option value="text">Text</option>
+                                <option value="date">Date</option>
+                                <option value="number">Number</option>
+                                <option value="asset">Asset (Positive Balance)</option>
+                                <option value="liability">Liability (Negative Balance)</option>
+                                <option value="password">Password / Secure</option>
+                                <option value="note">Long Note</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Value</label>
+                            <input type="text" id="binder-field-value" placeholder="Enter value...">
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button id="btn-binder-cancel" class="btn secondary">Cancel</button>
+                        <button id="btn-binder-save" class="btn primary">Save</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Binder Search Modal -->
+        <div id="binder-search-modal" class="modal-overlay" style="display: none;">
+            <div class="modal binder-modal"
+                style="max-width: 600px; height: 80vh; display: flex; flex-direction: column;">
+                <h3>Search Binder</h3>
+                <div class="input-group">
+                    <input type="text" id="binder-search-input" placeholder="Type to search..."
+                        style="font-size: 1.2em; padding: 12px;">
+                </div>
+                <div id="binder-search-results"
+                    style="flex: 1; overflow-y: auto; border: 1px solid #eee; margin-top: 10px; border-radius: 6px; padding: 10px; background: #fafafa;">
+                    <div class="empty-state small">Enter text to search across all members and fields.</div>
+                </div>
+                <div class="modal-actions" style="margin-top: 15px;">
+                    <button id="btn-binder-search-close" class="btn secondary">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global App Lock Screen -->
+        <div id="app-lock-screen"
+            style="display: none; position: fixed; inset: 0; z-index: 10000; background: #2c3e50; align-items: center; justify-content: center; flex-direction: column;">
+            <div class="lock-card"
+                style="background: white; padding: 40px; border-radius: 20px; text-align: center; width: 90%; max-width: 400px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                <div style="font-size: 4rem; margin-bottom: 20px;">🔒</div>
+                <h2 id="lock-title" style="margin: 0 0 10px 0; color: #2c3e50; font-family: 'Merriweather', serif;">
+                    Legacy Binder</h2>
+                <p id="lock-message" style="color: #7f8c8d; margin-bottom: 30px;">This binder is secured.</p>
+
+                <div class="input-group">
+                    <input type="password" id="auth-password" placeholder="Enter Master Password"
+                        style="font-size: 1.2rem; padding: 15px; text-align: center; margin-bottom: 20px; width: 100%; box-sizing: border-box; border: 2px solid #ddd; border-radius: 8px;">
+                </div>
+
+                <button id="btn-unlock-app" class="btn primary"
+                    style="width: 100%; padding: 15px; font-size: 1.1rem; justify-content: center;">Unlock</button>
+
+                <p id="auth-error" style="color: #e74c3c; margin-top: 15px; min-height: 20px; font-size: 0.9em;"></p>
+
+                <div id="auth-setup-note"
+                    style="display: none; margin-top: 20px; background: #e8f5e9; padding: 15px; border-radius: 8px; color: #2e7d32; font-size: 0.9em;">
+                    <strong>First Time Setup:</strong><br>Create a Master Password to encrypt your data.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts (Moved to bottom to ensure DOM is ready) -->
+    <script src="js/security-monitor.js?v=2"></script> <!-- Security Suite (New) -->
+    <script src="js/webauthn-helper.js?v=2"></script> <!-- Biometrics (New) -->
+    <script src="js/crypto-helper.js?v=3"></script>
+    <script src="binder_template.js?v=3"></script>
+    <script src="js/binder.js?v=7"></script>
+    <script src="js/recovery.js?v=5"></script>
+    <script src="js/binder-ui.js?v=8"></script>
+    <script src="js/binder-print.js?v=5"></script>
+    <script src="js/app.js?v=3"></script>
+    <script src="js/auth.js?v=8"></script>
+
+    <script>
+        // PWA SERVICE WORKER REGISTRATION & INSTALLATION LOGIC
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>

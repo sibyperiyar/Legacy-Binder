@@ -1,0 +1,21 @@
+{
+  "name": "Locomotion Diary",
+  "short_name": "Locomotion",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8f5f2",
+  "theme_color": "#f8f5f2",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

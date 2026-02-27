@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Binder - User Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@300;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fdfdfd;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e50;
+        }
+
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 3rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .box {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-left: 4px solid #2196f3;
+            margin: 1.5rem 0;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin: 1rem 0;
+        }
+
+        .back-to-top {
+            display: block;
+            margin-top: 1rem;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="back-btn">← Back to App</a>
+    <h1>User Guide 📖</h1>
+    <p>A complete reference manual for your Legacy Binder.</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#intro">1. Introduction (Why this App?)</a></li>
+            <li><a href="#startup">2. Startup Guide & Setup</a></li>
+            <li><a href="#binder">3. Using the Legacy Binder</a></li>
+            <li><a href="#security">4. Security, Encryption & Recovery</a></li>
+            <li><a href="#troubleshooting">5. Troubleshooting</a></li>
+        </ul>
+    </div>
+
+    <section id="intro">
+        <h2>1. Introduction: Why this App?</h2>
+        <p>Legacy Binder is designed to master a critical aspect of your life:
+            <strong>Prospective Security</strong> (your financial legacy).
+        </p>
+
+        <div class="box" style="background: #fff3e0; border-left-color: #ff9800;">
+            <h3>📔 The Safety Net</h3>
+            <p><strong>1. Managing Digital Complexity</strong><br>
+                With our lives spread across various apps, portals, and paperless billing, our financial footprint has
+                become invisible. A legacy binder consolidates these scattered digital threads (passwords, customer IDs,
+                and hidden investments) into a single point of reference.</p>
+
+            <p><strong>2. Providing a Safety Net for Your Family</strong><br>
+                In the event of an emergency, family members are often overwhelmed. Forcing them to navigate a
+                bureaucratic maze is an added burden. This binder acts as a "manual" for your life, allowing loved ones
+                to manage affairs with dignity and clarity.</p>
+
+            <p><strong>3. Financial Discipline & "Net Worth" Clarity</strong><br>
+                Maintaining this planner forces a regular audit of your life. It highlights dormant accounts, upcoming
+                renewals, and your true liabilities, helping you make informed decisions about retirement and estate
+                planning.</p>
+
+            <p><strong>4. Protection Against "Information Blackouts"</strong><br>
+                Technology is fragile. Phones break, accounts get locked. Having a structured record (which you can
+                export/print) ensures your most vital information remains accessible even during technical failures.</p>
+
+            <p><strong>5. Seamless Transition of Wealth</strong><br>
+                Billions of rupees lie in unclaimed accounts because nominees were unaware they existed. By documenting
+                every deed and fund here, we ensure your legacy is successfully transferred to the next generation.</p>
+        </div>
+        <a href="#" class="back-to-top">↑ Top</a>
+    </section>
+
+    <section id="startup">
+        <h2>2. Startup Guide 🚀</h2>
+        <div class="box">
+            <strong>Welcome!</strong> Follow these steps to set up your secure binder.
+        </div>
+
+        <h3>Step 1: Security First (The Master Key)</h3>
+        <p>When you first open the app, you will be asked to create a <strong>Master Password</strong>.</p>
+        <ul>
+            <li><strong>Why?</strong> This password encrypts EVERYTHING in your Binder.</li>
+            <li><strong>Constraint:</strong> We cannot recover this for you.</li>
+            <li><strong>Action:</strong> Create a strong password. Later you can use the <strong>Backup</strong> option
+                at the top of the interface to download your <strong>🚑 Emergency Kit</strong>.</li>
+        </ul>
+
+        <h3>Step 2: Enable Biometrics (Optional) 👆</h3>
+        <p>If you have a supported device (Windows Hello / TouchID, etc.):</p>
+        <ul>
+            <li>After setting your password, look for the option to <strong>Enroll Biometrics</strong> when you launch
+                the app next time.</li>
+            <li>This allows you to unlock the app with a simple fingerprint or face scan!</li>
+        </ul>
+        <a href="#" class="back-to-top">↑ Top</a>
+    </section>
+
+    <section id="binder">
+        <h2>3. Using the Legacy Binder 📔</h2>
+        <div class="box">
+            <strong>What is it?</strong> A private, secure place to organize your life's critical documents (Insurance,
+            Property, IDs).
+        </div>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>👪 Unlimited Members:</strong> Manage records for yourself, spouse, parents, or children without
+                limits. Every new member automatically starts with the 'a Civil & Financial' default template.</li>
+            <li><strong>📂 Recursive Folders & Fields:</strong> Create unlimited sub-folders and add any number and
+                types of additional fields to customize data tracking.</li>
+            <li><strong>🖱️ Drag and Drop:</strong> Easily rearrange sections and folders by dragging and dropping them
+                up or down the tree.</li>
+            <li><strong>📋 Copy & Paste:</strong> Duplicate entire sections quickly by using the copy and paste buttons
+                to save typing.</li>
+            <li><strong>🔔 Expiry Alerts:</strong> Automatically tracks dates (like Passport Expiry) and warns you 60
+                days in advance.</li>
+            <li><strong>🔒 Password Masking:</strong> Store digital legacy pins securely (masked as ••••••).</li>
+            <li><strong>🌐 Global Master List:</strong> Comes with a pre-loaded template for a Civil & Financial
+                documents.</li>
+        </ul>
+
+        <div class="box" style="border-left-color: #d32f2f; background: #ffebee;">
+            <strong>⚠️ Important:</strong> Your data lives in your <strong>Browser's Memory</strong>. If you clear your
+            history/cache, it will be DELETED. Please click <strong>"📤 Backup"</strong> regularly to save your
+            Emergency Kit
+            to your computer.
+        </div>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li><strong>Add Member:</strong> Click <strong>"➕ 👤"</strong> to create a profile. It will auto-load the
+                default master list.</li>
+            <li><strong>Edit Structure:</strong>
+                <ul>
+                    <li>Click <strong>"+ Sub-Section"</strong> to add nested folders.</li>
+                    <li>Click <strong>"+ Add Field"</strong> to add data points (Text, Date, Password).</li>
+                    <li>Use the <strong>Copy</strong> and <strong>Paste</strong> icons next to items to duplicate
+                        repetitive structures.</li>
+                    <li>Use the <strong>Drag Handles (☰)</strong> to reorder sections.</li>
+                </ul>
+            </li>
+            <li><strong>Search:</strong> Click <strong>"🔍 Search"</strong> to find any policy number or document across
+                ALL family members instantly.</li>
+        </ol>
+
+        <h3>Automatic Upcoming Alerts 🔔</h3>
+        <p>The app automatically scans your binder for urgent dates.</p>
+        <div class="box">
+            <strong>How to trigger an alert?</strong><br>
+            The system looks for fields that meet <strong>two conditions</strong>:
+            <ol>
+                <li><strong>Type:</strong> The field must be a <strong>Date</strong> field.</li>
+                <li><strong>Name:</strong> The title must contain one of these keywords:
+                    <ul>
+                        <li>"Expiry" (e.g., <em>Passport Expiry, Expiry of vehicle registration</em>)</li>
+                        <li>"Renew" (e.g., <em>Passport Renewal, Renewal Date</em>)</li>
+                        <li>"Due" (e.g., <em>Payment Due</em>)</li>
+                        <li>"Maturity" (e.g., <em>Insurance Maturity</em>)</li>
+                    </ul>
+                </li>
+            </ol>
+            Matches within the next <strong>60 days</strong> will appear as a notification alert automatically inside a
+            member's binder view.
+        </div>
+
+        <h3>Visual Template Editing (Advanced) 🛠️</h3>
+        <p>Want to change the default list for everyone?</p>
+        <ol>
+            <li>Create or select a family member.</li>
+            <li>Design your perfect folder structure in the app by adding, arranging, and configuring sections and
+                fields exactly how you want them.</li>
+            <li>Click <strong>"💾 Tpl"</strong> (Save Template) in the top menu.</li>
+            <li>This downloads a file named <code>binder_template.js</code> which now contains your custom blueprint.
+            </li>
+            <li><strong>Replace</strong> the default <code>binder_template.js</code> file in your app installation
+                folder with this newly downloaded one.</li>
+            <li>Now, every new family member you add to the binder will automatically be pre-loaded with YOUR custom
+                structure!</li>
+        </ol>
+
+        <a href="#" class="back-to-top">↑ Top</a>
+    </section>
+
+    <section id="security">
+        <h2>4. Security, Encryption & Recovery 🔐</h2>
+        <div class="box" style="border-left-color: #d32f2f; background: #ffebee;">
+            <strong>Zero-Knowledge Architecture:</strong>
+            <p>Your <strong>Legacy Binder</strong> is encrypted with
+                <strong>military-grade AES-GCM-256</strong> using your Master Password.
+            </p>
+            <ul>
+                <li>We cannot see your data.</li>
+                <li>Your password is never sent to any server.</li>
+                <li>The data never leaves your browser unless you explicitly download an encrypted backup.</li>
+                <li><strong>CRITICAL:</strong> If you lose your password AND you don't have an Emergency Kit, your data
+                    is lost forever. There is no "Forgot Password" link on the internet.</li>
+            </ul>
+        </div>
+
+        <h3>App Lock Screen</h3>
+        <p>You can lock the entire application to prevent unauthorized access on a shared device.</p>
+        <ul>
+            <li><strong>Auto-Lock:</strong> The app locks automatically when you close the tab.</li>
+            <li><strong>Manual Lock:</strong> You can quickly lock the app directly through your browser or by
+                refreshing the page.</li>
+        </ul>
+
+        <h3>👆 Biometric Unlock (Windows Hello / TouchID)</h3>
+        <p>Enjoy password-free access while keeping your data encrypted!</p>
+        <ul>
+            <li><strong>How to Enable:</strong> If your device supports secure unlock (like Windows Hello or TouchID),
+                the app will prompt you with <strong>✨ ENABLE BIOMETRICS? ✨</strong> after you successfully log in.
+                Click OK to link your biometric profile.</li>
+            <li><strong>How it works:</strong> We use your device's secure hardware (WebAuthn/TPM) to safely store and
+                retrieve your encryption key when you scan your fingerprint or face.</li>
+            <li><strong>Requirements:</strong> The app must be served over a secure connection (HTTPS) or
+                <code>localhost</code>. It will NOT work if you just open the file directly (<code>file://</code>).</li>
+        </ul>
+
+        <h3>🚑 Secure Backups & Recovery</h3>
+        <p>Because there is no cloud sync or email reset, you MUST handle your own "Plan B". The app offers two types of
+            backups.</p>
+
+        <h4>1. Creating a Backup (The "Golden Key")</h4>
+        <p>Inside the app dashboard, you can create a full, encrypted backup of all family members and their folders at
+            any time.</p>
+        <ol>
+            <li>Click <strong>"📤 Backup"</strong> in the main header menu.</li>
+            <li>This downloads a special encrypted JSON file (e.g., <code>locomotion_binder_backup_[Date].json</code>).
+            </li>
+            <li><strong>Includes:</strong> The entire database structure in a securely encrypted format. It CANNOT be
+                read without your Master Password.</li>
+            <li><em>Note: You can also download an "Emergency Kit HTML" from the lock screen, which includes a visual
+                    copy of your password. Do NOT email the Emergency Kit to yourself unencrypted.</em></li>
+        </ol>
+
+        <h4>2. How to Restore Data</h4>
+        <p>If you switch devices, clear your browser cache, or want to roll back to a previous state, use the Restore
+            tools.</p>
+        <ul>
+            <li><strong>From Inside the App:</strong> If you are logged in, click the <strong>"📥 Restore"</strong>
+                button from the top menu, then upload your encrypted JSON backup. The app will immediately ingest the
+                full database and refresh your view.</li>
+            <li><strong>From the Lock Screen:</strong> If you are locked out or on a fresh device, click <strong>"♻️
+                    Restore with Kit"</strong> on the lock screen. You can upload either the encrypted JSON File or the
+                Emergency Kit HTML. The app will automatically unlock, reset your Master Password to match the backup,
+                and restore your data.</li>
+        </ul>
+
+        <h4>3. Factory Reset (I Forgot My Password!)</h4>
+        <p>If you completely lose your password and have no Emergency Kit, your data is inaccessible. To make the app
+            usable again:</p>
+        <ol>
+            <li>Click <strong>"🗑️ Reset App"</strong> on the Lock Screen.</li>
+            <li>You must type your current password (if known) or the hidden override string to start fresh.</li>
+            <li>Accept the warnings to <strong>DELETE ALL DATA</strong>.</li>
+            <li>This wipes the encrypted database so you can start fresh.</li>
+        </ol>
+
+        <a href="#" class="back-to-top">↑ Top</a>
+    </section>
+
+    <section id="troubleshooting">
+        <h2>5. Troubleshooting 🔧</h2>
+        <p>If the app ever feels "stuck" or you notice an issue with display:</p>
+        <ul>
+            <li>Refresh the page. Your data is stored securely in the browser's Local Storage so it will load back right
+                away once you type your password.</li>
+            <li>Ensure you are opening the app via a local secure context or web server if biometrics features are
+                failing.</li>
+        </ul>
+        <a href="#" class="back-to-top">↑ Top</a>
+    </section>
+
+    <br><br>
+    <br><br>
+    <p style="text-align:center; color:#999;">
+        Created by <a href="https://github.com/sibyperiyar" style="color:#777; text-decoration:none;">Siby Periyar</a>
+    </p>
+
+</body>
+
+</html>
