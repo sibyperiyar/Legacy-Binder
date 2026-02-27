@@ -1,31 +1,28 @@
-# Locomotion Diary 📍
+# Legacy Binder 📔
 
-**A private, offline-first travel diary & secure document vault.**
+**A private, offline-first secure document vault for your family.**
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## 📖 About
 
-Locomotion Diary is a **Progressive Web App (PWA)** that runs entirely in your browser. It is designed to be the "Forever Home" for your location memories.
+The Legacy Binder is a **Progressive Web App (PWA)** that runs entirely in your browser. It acts as an encrypted master record for all your vital documents, financial assets, and online accounts to ensure seamless legacy transfer and peace of mind.
 
 **Developed by Siby P Varkey (Zetozone).**
 
-**Two Ways to Use:**
-
-1. **Visualizer:** Import your raw JSON data from **Google Timeline (Takeout)** to instantly see year of history.
-2. **Standalone Diary:** Use the built-in controls to manually log trips and places without ever needing Google.
-
 **Key Features:**
 
-* 🌍 **Interactive Maps:** Visualize your daily routes on a privacy-friendly map.
-* ☁️ **Weather Context:** Automatically fetch historical weather for your past trips.
-* 📊 **Life Analytics:** Heatmaps, Transport modes, and "Time Spent" stats.
-* 🔒 **Privacy First:** 100% Offline processing. Data lives in your browser's IndexedDB.
-* 🖨️ **E-Book Export:** Generate a professional PDF diary for printing.
+* 🔒 **Zero-Knowledge Security:** 100% Offline processing. Data lives in your browser's IndexedDB and is encrypted using **AES-GCM-256**.
+* 👆 **Biometric Unlock:** Support for Windows Hello / TouchID for seamless, secure access.
+* 🔔 **Proactive Alerts:** Automatically scans your records to warn you 60 days in advance of passport expiries or policy renewals.
+* 🧑‍🤝‍🧑 **Family Management:** Create separate, organized profiles for every member of your family.
+* 🚑 **Emergency Kit:** Downloadable, offline recovery kit containing your encrypted database and keys.
 
-## 🚀 Hosting
+## 🚀 Hosting & Installation
 
 You can host this application on any static web server (GitHub Pages, Netlify, Vercel, or your own Apache/Nginx server).
+
+As a PWA, it can be installed directly to your Desktop or Mobile Home Screen for a native, offline app experience.
 
 ## 🤝 Credits
 
