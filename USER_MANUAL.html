@@ -119,7 +119,8 @@
             <li><a href="#startup">2. Startup Guide & Setup</a></li>
             <li><a href="#binder">3. Using the Legacy Binder</a></li>
             <li><a href="#security">4. Security, Encryption & Recovery</a></li>
-            <li><a href="#troubleshooting">5. Troubleshooting</a></li>
+            <li><a href="#updates">5. App Updates</a></li>
+            <li><a href="#troubleshooting">6. Troubleshooting</a></li>
         </ul>
     </div>
 
@@ -301,7 +302,8 @@
             <li><strong>How it works:</strong> We use your device's secure hardware (WebAuthn/TPM) to safely store and
                 retrieve your encryption key when you scan your fingerprint or face.</li>
             <li><strong>Requirements:</strong> The app must be served over a secure connection (HTTPS) or
-                <code>localhost</code>. It will NOT work if you just open the file directly (<code>file://</code>).</li>
+                <code>localhost</code>. It will NOT work if you just open the file directly (<code>file://</code>).
+            </li>
         </ul>
 
         <h3>🚑 Secure Backups & Recovery</h3>
@@ -347,8 +349,37 @@
         <a href="#" class="back-to-top">↑ Top</a>
     </section>
 
+    <section id="updates">
+        <h2>5. App Updates 🔄</h2>
+        <p>You can check if there's a newer version of the Legacy Binder directly from the app.</p>
+
+        <h3>How to Check for Updates</h3>
+        <ol>
+            <li>Inside the unlocked app, click the <strong>⚙️ Settings</strong> button in the top right header menu.
+            </li>
+            <li>The <strong>Settings Modal</strong> will appear showing your current <strong>Version</strong> (e.g.,
+                Version 1.0.0).</li>
+            <li>Click the blue <strong>"Check for Updates"</strong> button.</li>
+            <li>The app will securely check the live Zetozone server for a new version. If one is found, you will be
+                prompted to download it. If not, it will confirm you are on the latest version.</li>
+        </ol>
+
+        <div class="box">
+            <strong>Custom Server Overrides (Advanced)</strong><br>
+            If you clone or host this app yourself, you can type your own <code>version.json</code> hosting URL into the
+            <strong>Update Server URL</strong> box in the Settings modal to redirect update checks to your own server.
+        </div>
+
+        <h3>Force Reloading</h3>
+        <p>If you recently uploaded new files to your server but your browser isn't showing them yet due to aggressive
+            caching, click the <strong>"🔄 Force Reload App"</strong> button at the bottom of the Settings Modal. This
+            forces the browser to fetch the freshest scripts without deleting your encrypted database.</p>
+
+        <a href="#" class="back-to-top">↑ Top</a>
+    </section>
+
     <section id="troubleshooting">
-        <h2>5. Troubleshooting 🔧</h2>
+        <h2>6. Troubleshooting 🔧</h2>
         <p>If the app ever feels "stuck" or you notice an issue with display:</p>
         <ul>
             <li>Refresh the page. Your data is stored securely in the browser's Local Storage so it will load back right

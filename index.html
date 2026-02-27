@@ -13,7 +13,14 @@
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="manifest" href="manifest.json">
+    <script>
+        if (window.location.protocol !== 'file:') {
+            const link = document.createElement('link');
+            link.rel = 'manifest';
+            link.href = 'manifest.json';
+            document.head.appendChild(link);
+        }
+    </script>
     <link rel="stylesheet" href="css/style.css?v=204">
     <link rel="stylesheet" href="css/binder.css?v=4">
     <meta name="theme-color" content="#f8f5f2">
@@ -45,6 +52,10 @@
                     <button id="btn-binder-print" class="nav-btn secondary" title="Print to PDF">🖨️ Print</button>
                     <button id="btn-binder-save-template" class="nav-btn secondary"
                         title="Save Structure as Template">💾 Tpl</button>
+
+                    <div style="width: 10px;"></div> <!-- Spacer -->
+
+                    <button id="btn-settings" class="nav-btn secondary" title="Settings">⚙️ Settings</button>
 
                     <div style="width: 10px;"></div> <!-- Spacer -->
 
@@ -193,6 +204,31 @@
 
     </div>
 
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay" style="display: none;">
+        <div class="modal" style="max-width: 500px; text-align: center;">
+            <h2 style="margin-bottom: 5px; font-family: 'Merriweather', serif; color: #2c3e50;">Legacy Binder</h2>
+            <p id="settings-version-display" style="color: #7f8c8d; font-size: 0.9em; margin-bottom: 20px;">Version
+                Loading...</p>
+
+            <div class="input-group" style="text-align: left; margin-bottom: 20px;">
+                <label>🔄 Update Server URL</label>
+                <input type="text" id="setting-update-url" placeholder="https://example.com/version.json">
+            </div>
+
+            <div class="modal-actions" style="justify-content: center; gap: 10px;">
+                <button id="btn-check-updates" class="btn primary" style="background: #3498db;">Check for
+                    Updates</button>
+            </div>
+
+            <div style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                <button id="btn-force-reload" class="btn secondary" style="font-size: 0.9em;">🔄 Force Reload
+                    App</button>
+                <button id="btn-settings-close" class="btn secondary">Done</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts (Moved to bottom to ensure DOM is ready) -->
     <script src="js/security-monitor.js?v=2"></script> <!-- Security Suite (New) -->
     <script src="js/webauthn-helper.js?v=2"></script> <!-- Biometrics (New) -->
@@ -204,6 +240,8 @@
     <script src="js/binder-print.js?v=5"></script>
     <script src="js/app.js?v=3"></script>
     <script src="js/auth.js?v=8"></script>
+    <script src="js/version.js"></script>
+    <script src="js/updater.js?v=1"></script>
 
     <script>
         // PWA SERVICE WORKER REGISTRATION & INSTALLATION LOGIC
